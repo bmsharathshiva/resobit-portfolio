@@ -6,6 +6,7 @@
 <title>ResoBit — Embedded Intelligence. Real-World Impact.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
   :root {
     --bg: #070B12;
@@ -72,7 +73,13 @@
     letter-spacing: -0.5px;
     color: var(--text);
   }
-  .nav-logo span { color: #0c8596; }
+  .nav-logo, .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-accent { color: #0c8596; }
+  .logo-img { height: 32px; width: auto; }
 
   .nav-links {
     display: flex;
@@ -702,6 +709,17 @@
     margin-top: 64px;
   }
 
+  .pipeline-grid-overview {
+    margin-bottom: 48px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+
   .pipeline-title {
     font-family: 'Syne', sans-serif;
     font-size: 28px;
@@ -910,7 +928,9 @@
     font-size: 18px;
     color: var(--text);
   }
-  .footer-logo span  { color: #0c8596; }
+  .footer-logo .logo-img {
+    height: 24px;
+  }
   .footer-copy {
     font-size: 13px;
     color: var(--text3);
@@ -921,6 +941,7 @@
     nav, section, .hero { padding-left: 32px; padding-right: 32px; }
     .caps-grid { grid-template-columns: 1fr 1fr; }
     .project-card.featured { grid-template-columns: 1fr; }
+    .pipeline-grid-overview { grid-template-columns: 1fr 1fr; }
     .pipeline-steps { grid-template-columns: 1fr 1fr; gap: 20px; }
     .pipeline-steps::before { display: none; }
     .why-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -932,12 +953,20 @@
     .hero, section { padding-left: 20px; padding-right: 20px; }
     .caps-grid, .project-grid, .current-grid { grid-template-columns: 1fr; }
     .project-card.featured { grid-column: span 1; }
-    .hero-stats { gap: 28px; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .stat-num { font-size: 28px; }
+    .pipeline-grid-overview { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-logo { justify-content: center; }
 
     .cta-box { padding: 60px 20px; }
     .cta-actions { flex-direction: column; align-items: stretch; }
     .cta-actions .btn-primary, .cta-actions .email-pill { width: 100%; justify-content: center; font-size: 13px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 42px; }
+    .hero-stats { flex-direction: column; gap: 20px; }
   }
 </style>
 </head>
@@ -945,7 +974,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Reso<span>Bit</span></div>
+  <div class="nav-logo"><img src="icon.png" alt="" class="logo-img"><span>Reso<span class="logo-accent">Bit</span></span></div>
   <ul class="nav-links">
     <li><a href="#capabilities">Capabilities</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -1259,7 +1288,7 @@
   <p class="section-desc">The Smart Bicycle Rental platform sits squarely at the intersection of our core strengths — embedded firmware, IoT connectivity, GPS tracking, and cloud backend systems.</p>
 
   <div class="pipeline-wrap">
-    <div style="margin-bottom:48px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
+    <div class="pipeline-grid-overview">
       <div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--lime);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;">We've already built</div>
         <div style="display:flex;flex-direction:column;gap:8px;">
@@ -1376,7 +1405,7 @@
         <span class="tag cyan">Responsive Design</span>
         <span class="tag">B2B Industry</span>
       </div>
-      <a class="project-live" href="https://id-preview--0b9793d6-40eb-41a4-b683-467eaf046f20.lovable.app/" target="_blank">
+      <a class="project-live" href="https://sb-safety-equipments.vercel.app" target="_blank">
         <span class="live-dot" style="background:var(--cyan)"></span>View Site
       </a>
     </div>
@@ -1426,7 +1455,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Reso<span>Bit</span></div>
+  <div class="footer-logo"><img src="icon.png" alt="" class="logo-img"><span>Reso<span class="logo-accent">Bit</span></span></div>
   <div class="footer-copy">© 2026 ResoBit. Bengaluru, India. Built by engineers, for engineers.</div>
 </footer>
 
